@@ -38,3 +38,18 @@ func Eat(fridge Refrigerator) error {
 	//fridge.Close()
 	return nil
 }
+
+// CURRENT OUTPUT:
+// Opening refrigerator
+// bananas not found
+// DESIRED OUTPUT:
+// Opening refrigerator
+// Closing refrigerator
+// bananas not found
+func main() {
+	var fridge Refrigerator
+	err := Eat(fridge)
+	if err != nil {
+		fmt.Println(err)
+	}
+}

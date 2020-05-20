@@ -23,19 +23,24 @@ func (r Robot) Walk() {
 	fmt.Println("Powering legs")
 }
 
+type NoiseMaker interface {
+	MakeSound()
+}
+
 // YOUR CODE HERE:
 // Define a NoiseMaker interface type, which the above
 // Whistle, Horn, and Robot types will all satisfy.
 // It should require one method, MakeSound, which has
 // no parameters and no return values.
-type NoiseMaker interface {
-	MakeSound()
+func Play(n NoiseMaker) {
+	n.MakeSound()
 }
+
 // YOUR CODE HERE:
 // Define a Play function that accepts a parameter with
 // the NoiseMaker interface. Play should call MakeSound
 // on the parameter it receives.
-func Play(NoiseMaker)
+
 func main() {
 	// When the above code has been implemented
 	// correctly, this code should run and produce
